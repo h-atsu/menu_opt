@@ -49,9 +49,11 @@ class CBC_Model:
                 self._menu_name_nutorition_name_map_val[s, n]*self._x_s[s] for s in self._list_menu_name)
 
             self._model += self._nutorition_sum_n[n] - \
-                self._nutorition_name_map_require_amount[n] <= self._z_n[n]
+                self._nutorition_name_map_require_amount[n] <= self._z_n[n] * \
+                self._nutorition_name_map_require_amount[n]
             self._model += self._nutorition_name_map_require_amount[n] - \
-                self._nutorition_sum_n[n] <= self._z_n[n]
+                self._nutorition_sum_n[n] <= self._z_n[n] * \
+                self._nutorition_name_map_require_amount[n]
 
         # preference constraint
         for s in self._list_menu_name:
