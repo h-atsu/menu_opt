@@ -1,7 +1,8 @@
 from pydantic import BaseModel, Field
 
 
-class MenuData(BaseModel):
+class RequestMenuData(BaseModel):
+    name: str
     price: int
     energy: float
     protein: float
@@ -13,17 +14,14 @@ class MenuData(BaseModel):
     img_url: str
 
 
-class OptimizeInputData(BaseModel):
-    max_budget: int
+class APIRequest(BaseModel):
+    cafe_file_name: str = Field(None, example='kansita.csv')
+    max_budget: int = Field(None, example=500)
     list_include: list[str]
     list_exclude: list[str]
-    list_menu_name: list[str]
-    list_nutorition_name: list[str]
-    nutorition_name_map_require_amount: dict[str, float]
-    menu_name_map_menu_data: dict[str, MenuData]
 
 
-class OptimizeOutputData(BaseModel):
-    list_selected_menu_name: list[str]
+class APIResponse(BaseModel):
+    list_selected_menu_data: list[RequestMenuData]
     nutorition_name_map_amount: dict[str, float]
     total_cost: int

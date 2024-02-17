@@ -25,6 +25,8 @@ st.set_page_config(
 # タイトル
 st.title('学食の献立最適化')
 
+st.text('条件入力')
+
 list_cafe_name = ['図書館下食堂', 'かさね', 'レインボー', 'ファミール']
 cafe_name_map_file_name = {
     '図書館下食堂': 'kansita.csv',
@@ -59,8 +61,10 @@ if st.button('献立を作成'):
 
     df_menu = pd.DataFrame(list_menu_data)
 
+    st.divider()
+    st.text('最適化結果')
+    st.write(f'合計金額 : {total_cost}')
     st.dataframe(df_menu.iloc[:, :-1])
-
     for i, row in enumerate(df_menu.itertuples()):
         if i % 3 == 0:
             cols = st.columns(3)

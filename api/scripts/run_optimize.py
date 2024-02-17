@@ -3,7 +3,7 @@ import pandas as pd
 from model.make_input_data import make_optimize_input_data
 from model.cbc_model import CBC_Model
 
-FILE_PATH = '../data/kansita.csv'
+FILE_PATH = './data/kansita.csv'
 
 
 def main(FILE_PATH: str, max_budget: int, list_include: list[str], list_exclude: list[str]):

@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "menu-opt"
+version = "0.1.0"
+description = ""
+authors = ["atsuhiro <jhuim08@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.12"
+selenium = "^4.17.2"
+pulp = "^2.8.0"
+pydantic = "^2.6.0"
+beautifulsoup4 = "^4.12.3"
+pandas = "^2.2.0"
+requests = "^2.31.0"
+streamlit = "^1.31.0"
+matplotlib = "^3.8.2"
+mip = "^1.15.0"
+fastapi = "^0.109.2"
+uvicorn = {extras = ["standard"], version = "^0.27.1"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

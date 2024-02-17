@@ -34,7 +34,7 @@ def get_data(url, save_path):
     driver.quit()
 
     cont = bsObj.find(class_='area')
-    all_menu_links = cont.find_all('a')
+    all_menu_links = cont.find_all('a')[1:-1]
 
     base_url = 'https://west2-univ.jp/sp/'
 
